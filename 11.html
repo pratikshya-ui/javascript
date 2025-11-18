@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Array Smallest Number</h3>
+
+Enter numbers :  
+<input id="arr2"><br><br>
+
+<button onclick="smallest()">Find Smallest</button>
+
+<p id="tho"></p>
+
+<script>
+function smallest() {
+    let numbers = document.getElementById("arr2").value.split(",").map(Number);
+    let small = Math.min(...numbers);
+
+    document.getElementById("tho").innerHTML = "Smallest: " + small;
+}
+</script>
+
+</body>
+</html>

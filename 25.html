@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Person Account</h3>
+<button onclick="personFunc()">Show Account</button>
+<p id="ott"></p>
+
+<script>
+function personFunc(){
+ let personAccount={
+   firstName:"Peter",
+   lastName:"Kc",
+   incomes:[{desc:"Salary",amount:500000}],
+   expenses:[{desc:"Rent",amount:10000}],
+   totalIncome:function(){ return this.incomes.reduce((a,b)=>a+b.amount,0); },
+   totalExpense:function(){ return this.expenses.reduce((a,b)=>a+b.amount,0); },
+   accountBalance:function(){ return this.totalIncome()-this.totalExpense(); },
+   accountInfo:function(){ return this.firstName+" "+this.lastName; },
+   addIncome:function(desc,amt){ this.incomes.push({desc:desc,amount:amt}); },
+   addExpense:function(desc,amt){ this.expenses.push({desc:desc,amount:amt}); }
+ };
+ ott.innerHTML=
+ "Name: "+personAccount.accountInfo()+"<br>"+
+ "Income: "+personAccount.totalIncome()+"<br>"+
+ "Expense: "+personAccount.totalExpense()+"<br>"+
+ "Balance: "+personAccount.accountBalance();
+}
+</script>
+
+</body>
+</html>

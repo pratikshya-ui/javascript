@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Larger & Smaller</h2>
+
+<input id="n1" placeholder="Enter first number"><br>
+<input id="n2" placeholder="Enter second number"><br>
+<input id="n3" placeholder="Enter third number"><br>
+
+<button onclick="checkThree()">Show Result</button>
+
+<p id="o"></p>
+
+<script>
+function checkThree() {
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    let c = Number(document.getElementById("n3").value);
+
+    let larger = Math.max(a, b, c);
+    let smaller = Math.min(a, b, c);
+
+    document.getElementById("o").innerHTML =
+        "Larger: " + larger + "<br>Smaller: " + smaller;
+}
+</script>
+
+</body>
+</html>

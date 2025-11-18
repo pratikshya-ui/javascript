@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Check if Input is Array</h3>
+
+Enter value: <input id="val"><br><br>
+
+<button onclick="checkArray()">Check</button>
+
+<p id="aresult"></p>
+
+<script>
+function checkArray() {
+    let input = eval(document.getElementById("val").value);
+    let isArr = Array.isArray(input);
+
+    document.getElementById("aresult").innerHTML = 
+        isArr ? "It is an array" : "It is NOT an array";
+}
+</script>
+
+</body>
+</html>

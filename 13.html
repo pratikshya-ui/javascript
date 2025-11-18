@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Join Array Elements</h3>
+
+Enter array elements:  
+<input id="joinArr"><br><br>
+
+<button onclick="joinArray()">Join</button>
+
+<p id="joinOut"></p>
+
+<script>
+function joinArray() {
+    let arr = document.getElementById("joinArr").value.split(",");
+    let result = arr.join("");
+
+    document.getElementById("joinOut").innerHTML = "Joined String: " + result;
+}
+</script>
+
+</body>
+</html>

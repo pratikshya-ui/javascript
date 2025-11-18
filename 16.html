@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Odd/Even 0 to 15</h3>
+<button onclick="oddEven()">Check</button>
+<p id="ev"></p>
+
+<script>
+function oddEven(){
+ let s="";
+ for(let i=0;i<=15;i++){
+   s += i+" "+(i%2===0?"Even":"Odd")+"<br>";
+ }
+ ev.innerHTML=s;
+}
+</script>
+
+</body>
+</html>

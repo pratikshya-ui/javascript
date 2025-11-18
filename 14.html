@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Sort Array</h3>
+
+Enter array elements :  
+<input id="sortArr"><br><br>
+
+<button onclick="sortArray()">Sort</button>
+
+<p id="sortOut"></p>
+
+<script>
+function sortArray() {
+    let arr = document.getElementById("sortArr").value.split(",");
+    arr.sort();
+
+    document.getElementById("sortOut").innerHTML = "Sorted: " + arr;
+}
+</script>
+
+</body>
+</html>

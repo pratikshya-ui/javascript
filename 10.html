@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Array Largest Number</h3>
+
+Enter numbers :  
+<input id="arr"><br><br>
+
+<button onclick="largest()">Find Largest</button>
+
+<p id="log"></p>
+
+<script>
+function largest() {
+    let numbers = document.getElementById("arr").value.split(",").map(Number);
+    let large = Math.max(...numbers);
+
+    document.getElementById("log").innerHTML = "Largest: " + large;
+}
+</script>
+
+</body>
+</html>
