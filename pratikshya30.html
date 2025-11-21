@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Countries </h2>
+<table id="countries" border="1" cellspacing="0" cellpadding="8"></table>
+
+<script>
+// sample 50 countries (you can add more or replace)
+let countries = [
+"India","Nepal","China","Bhutan","Pakistan","Sri Lanka",
+"USA","UK","Canada","Mexico","Brazil","Argentina",
+"France","Germany","Italy","Spain","Portugal","Netherlands",
+"Australia","New Zealand","Japan","South Korea","Thailand","Vietnam",
+"Egypt","South Africa","Nigeria","Kenya","Morocco","Ghana",
+"Russia","Ukraine","Poland","Sweden","Norway","Finland",
+"Saudi Arabia","UAE","Qatar","Iran","Iraq","Turkey",
+"Singapore","Malaysia","Philippines","Indonesia","Bangladesh","Myanmar"
+];
+
+let table = document.getElementById("countries");
+
+countries.forEach((country, index) => {
+    if (index % 6 === 0) {
+        row = table.insertRow();
+    }
+    let cell = row.insertCell();
+    cell.innerHTML = country;
+});
+</script>
+
+</body>
+</html>

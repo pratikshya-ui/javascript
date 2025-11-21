@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Today's Date</h3>
+
+<button onclick="showDate()">Show Date</button>
+<pre id="yo"></pre>
+
+<script>
+function showDate() {
+    let t = new Date();
+    let d = t.getDate();
+    let m = t.getMonth() + 1;
+    let y = t.getFullYear();
+
+    document.getElementById("yo").innerText =
+        m + "-" + d + "-" + y + "\n" +
+        m + "/" + d + "/" + y + "\n" +
+        d + "-" + m + "-" + y + "\n" +
+        d + "/" + m + "/" + y;
+}
+</script>
+
+</body>
+</html>

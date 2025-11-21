@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Dog Object</h3>
+<button onclick="dogFunc()">Dog</button>
+<p id="out"></p>
+
+<script>
+function dogFunc(){
+ let dog={};
+ console.log(dog);
+ dog.name="coco";
+ dog.legs=4;
+ dog.color="Black and white";
+ dog.age=2;
+ dog.bark=function(){ return "how how"; }
+ dog.breed="husky";
+ dog.getDogInfo=function(){ return this.name+" is "+this.age+" years old"; }
+ out.innerHTML="Name: "+dog.name+"<br>Legs: "+dog.legs+
+ "<br>Color: "+dog.color+"<br>Age: "+dog.age+
+ "<br>Bark: "+dog.bark()+"<br>Breed: "+dog.breed+
+ "<br>Info: "+dog.getDogInfo();
+}
+</script>
+
+</body>
+</html>

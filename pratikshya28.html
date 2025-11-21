@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 id="year">Asabeneh Yetayeh challenges in 2020</h1>
+<h2>30DaysOfJavaScript Challenge</h2>
+<p id="time"></p>
+
+<ul id="list">
+    <li>Python Challenge Done</li>
+    <li>JavaScript Challenge Ongoing</li>
+    <li>React Challenge Coming</li>
+    <li>FullStack Challenge Coming</li>
+    <li>DataAnalysis Challenge Coming</li>
+    <li>ReactNative Challenge Coming</li>
+    <li>MachineLearning Challenge Coming</li>
+</ul>
+
+<script>
+// a. Year color changes every 1 second
+setInterval(() => {
+    document.getElementById("year").style.color =
+        "#" + Math.floor(Math.random() * 16777215).toString(16);
+}, 1000);
+
+// b. Date/time background color changes every 1 second
+setInterval(() => {
+    const now = new Date();
+    const t = document.getElementById("time");
+    t.textContent = now.toLocaleString();
+    t.style.background =
+        "#" + Math.floor(Math.random() * 16777215).toString(16);
+    t.style.padding = "5px";
+}, 1000);
+
+// c, d, e. Change list colors
+document.querySelectorAll("#list li").forEach(li => {
+    const text = li.textContent.toLowerCase();
+
+    if (text.includes("done")) li.style.background = "green";
+    else if (text.includes("ongoing")) li.style.background = "yellow";
+    else li.style.background = "red";
+
+    li.style.padding = "5px";
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Calculation of Age</h3>
+Birthdate: <input id="dob" type="date">
+<button onclick="ageCalc()">Get Age</button>
+<p id="to"></p>
+
+<script>
+function ageCalc(){
+ let b=new Date(dob.value);
+ let now=new Date();
+ let age = now.getFullYear() - b.getFullYear();
+ if(now.getMonth()<b.getMonth() || (now.getMonth()==b.getMonth() && now.getDate()<b.getDate())) age--;
+ to.innerHTML="Age: "+age;
+}
+</script>
+
+</body>
+</html>

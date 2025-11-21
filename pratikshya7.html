@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Arithmetic Operations</h2>
+
+<input id="a" type="number" placeholder="Enter first number"><br>
+<input id="b" type="number" placeholder="Enter second number"><br>
+<button onclick="calc()">Calculate</button>
+
+<pre id="tr"></pre>
+
+<script>
+function calc() {
+    let x = Number(document.getElementById("a").value);
+    let y = Number(document.getElementById("b").value);
+
+    document.getElementById("tr").innerText =
+        "Addition = " + (x+y) + "\n" +
+        "Subtraction = " + (x-y) + "\n" +
+        "Multiplication = " + (x*y) + "\n" +
+        "Division = " + (x/y);
+}
+</script>
+
+</body>
+</html>

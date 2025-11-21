@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Date Difference</h3>
+<input id="d1" type="date">
+<input id="d2" type="date">
+<button onclick="diffDays()">Get Days</button>
+<p id="th"></p>
+
+<script>
+function diffDays(){
+ let start=new Date(d1.value);
+ let end=new Date(d2.value);
+ let diff=Math.abs(end-start)/(1000*60*60*24);
+ th.innerHTML="Difference: "+diff+" days";
+}
+</script>
+
+</body>
+</html>

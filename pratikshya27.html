@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation</title>
+</head>
+<body>
+
+    <p id="p1">Paragraph One</p>
+    <p id="p2">Paragraph Two</p>
+    <p id="p3">Paragraph Three</p>
+    <p id="p4">Paragraph Four</p>
+
+    <script>
+        // a. Get first paragraph using querySelector(tagname)
+        const firstPara = document.querySelector("p");
+        console.log(firstPara.textContent);
+
+        // b. Get each paragraph by ID
+        const para1 = document.querySelector("#p1");
+        const para2 = document.querySelector("#p2");
+        const para3 = document.querySelector("#p3");
+        const para4 = document.querySelector("#p4");
+
+        // c. Get all p as nodeList
+        const allParas = document.querySelectorAll("p");
+
+        // d. Loop through nodeList & display text
+        allParas.forEach(p => console.log(p.textContent));
+
+        // e. Set text content of 4th paragraph
+        para4.textContent = "Fourth Paragraph";
+
+        // f. Set id and class attributes (different methods)
+        para1.setAttribute("class", "paraClass");
+        para2.id = "paraTwo"; 
+        para3.className = "thirdPara";
+        para4.setAttribute("id", "paraFour");
+
+        // g. Change style of each paragraph
+        allParas.forEach(p => {
+            p.style.color = "blue";
+            p.style.background = "#f0f0f0";
+            p.style.border = "1px solid black";
+            p.style.fontSize = "18px";
+            p.style.fontFamily = "Arial";
+            p.style.padding = "5px";
+            p.style.margin = "5px 0";
+        });
+
+        // h. First & third → green ; second & fourth → red
+        allParas[0].style.color = "green";
+        allParas[2].style.color = "green";
+
+        allParas[1].style.color = "red";
+        allParas[3].style.color = "red";
+
+        // i. Set text, id, class to each paragraph
+        allParas[0].textContent = "I am pratikshya Karki";
+        allParas[0].id = "newP1";
+        allParas[0].className = "cls1";
+
+        allParas[1].textContent = "I am from Mulpani, Kathmandu";
+        allParas[1].id = "newP2";
+        allParas[1].className = "cls2";
+
+        allParas[2].textContent = "I love to watch movies";
+        allParas[2].id = "newP3";
+        allParas[2].className = "cls3";
+
+        allParas[3].textContent = "This is what i love to do";
+        allParas[3].id = "newP4";
+        allParas[3].className = "cls4";
+
+    </script>
+
+</body>
+</html>

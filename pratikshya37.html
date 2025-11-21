@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Clone / Remove</title>
+<style>
+    table { width: 30%; border-collapse: collapse; margin: 10px auto; }
+    th, td { border: 1px solid #ccc; padding: 5px; text-align: center; }
+    button { padding: 8px 12px; margin: 6px; cursor: pointer; }
+    .delete-btn {
+        background: red; color: white; border: none; padding: 4px 8px;
+        border-radius: 4px;
+    }
+</style>
+</head>
+
+<body>
+
+<table id="productTable">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td class="row-no">1</td>
+
+            <td>
+                <select>
+                    <option>Select Product</option>
+                    <option>Keyboard</option>
+                    <option>Mouse</option>
+                    <option>Monitor</option>
+                </select>
+            </td>
+
+            <td><input type="text" placeholder="Price"></td>
+
+            <td><button class="delete-btn" onclick="removeRow(this)">🗑</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="text-align:center;">
+    <button onclick="addRow()">Add New</button>
+</div>
+
+
+<script>
+
+// Add new row at bottom
+function addRow() {
+    let table = document.querySelector("#productTable tbody");
+    let lastRow = table.rows[table.rows.length - 1];
+    let clone = lastRow.cloneNode(true); // deep clone row
+
+    table.appendChild(clone);
+    updateRowNumbers();
+}
+
+// Remove specific row
+function removeRow(btn) {
+    let table = document.querySelector("#productTable tbody");
+
+    // Ensure at least one row stays
+    if (table.rows.length > 1) {
+        btn.parentElement.parentElement.remove();
+        updateRowNumbers();
+    }
+}
+
+// Update numbering column
+function updateRowNumbers() {
+    let rows = document.querySelectorAll("#productTable tbody .row-no");
+    rows.forEach((cell, index) => {
+        cell.innerHTML = index + 1;
+    });
+}
+
+</script>
+
+</body>
+</html>

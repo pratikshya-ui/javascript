@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Count Vowels</h3>
+String: <input id="str">
+<button onclick="countV()">Count</button>
+<p id="th"></p>
+
+<script>
+function countV() {
+  let s = document.getElementById("str").value;
+  let v = "aeiou";
+  let c = 0;
+  for (let i of s) if (v.includes(i)) c++;
+  document.getElementById("th").innerHTML = "Vowels: " + c;
+}
+</script>
+
+</body>
+</html>

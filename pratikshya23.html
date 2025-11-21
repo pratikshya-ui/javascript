@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Remove Characters</h3>
+String: <input id="s"><br>
+Number: <input id="n" type="number"><br>
+<button onclick="removeChar()">Remove</button>
+<p id="out"></p>
+
+<script>
+function removeChar(){
+ let str=s.value;
+ let num=+n.value;
+ out.innerHTML = str.slice(0,str.length-num);
+}
+</script>
+
+</body>
+</html>

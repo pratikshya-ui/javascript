@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>even and odd Numbers</h2>
+<div id="evod" style="display:flex;flex-wrap:wrap;gap:5px;"></div>
+
+<script>
+function isPrime(n) {
+    if (n < 2) return false;
+    for (let i = 2; i <= Math.sqrt(n); i++)
+        if (n % i === 0) return false;
+    return true;
+}
+
+const container = document.getElementById("evod");
+
+// create numbers using forEach style
+Array.from({length: 101}, (_, i) => i).forEach(num => {
+    const div = document.createElement("div");
+    div.textContent = num;
+    div.style.width = "40px";
+    div.style.padding = "10px";
+    div.style.textAlign = "center";
+
+    if (isPrime(num)) div.style.background = "red";      // prime
+    else if (num % 2 === 0) div.style.background = "green"; // even
+    else div.style.background = "yellow";                 // odd
+
+    container.appendChild(div);
+});
+</script>
+
+</body>
+</html>

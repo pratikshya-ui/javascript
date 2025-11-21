@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Check Blank String</h3>
+<input id="str" placeholder="Enter text">
+<button onclick="checkBlank()">Check</button>
+<p id="Td"></p>
+
+<script>
+function checkBlank(){
+ let s=str.value.trim();
+ Td.innerHTML = s==""?"Blank":"Not Blank";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ten Most Frequent Words</title>
+</head>
+<body>
+
+<h2>Ten Most Frequent Words</h2>
+
+<button onclick="findWords()">Click to Enter Text</button>
+
+<p id="result"></p>
+
+<script>
+    function tenMostFrequentWords(str) {
+        // Convert to lowercase and remove punctuation
+        str = str.toLowerCase().replace(/[^\w\s]/g, "");
+
+        let words = str.split(/\s+/);
+        let freq = {};
+
+        // Count frequency
+        words.forEach(word => {
+            if (word.trim() !== "") {
+                freq[word] = (freq[word] || 0) + 1;
+            }
+        });
+
+        // Sort by highest frequency
+        let sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]);
+
+        // Return top 10
+        return sorted.slice(0, 10);
+    }
+
+    function findWords() {
+        let input = prompt("Enter a sentence:");
+        let result = tenMostFrequentWords(input);
+
+        document.getElementById("result").innerHTML = 
+            "<b>Top 10 Most Frequent Words:</b><br>" + 
+            result.map(item => `${item[0]} : ${item[1]}`).join("<br>");
+    }
+</script>
+
+</body>
+</html>

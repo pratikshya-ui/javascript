@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Analog Clock</title>
+<style>
+    #clock {
+        width: 250px;
+        height: 250px;
+        border: 4px solid black;
+        border-radius: 50%;
+        position: relative;
+        background: #b3e5ff; /* Background color */
+        margin-left: 10px;   /* ⬅️ Moves the clock to the left-most side */
+        margin-top: 20px;
+    }
+
+    .hand {
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        background: black;
+        top: 50%;
+        left: 50%;
+        transform-origin: left;
+    }
+
+    #hour { height: 4px; width: 35%; }
+    #minute { height: 3px; width: 45%; }
+    #second { background: red; height: 2px; width: 48%; }
+
+    .tick {
+        position: absolute;
+        width: 4px;
+        height: 12px;
+        background: black;
+        left: 50%;
+        top: 5px;
+        transform-origin: center 120px;
+    }
+</style>
+</head>
+<body>
+
+<h3 style="margin-left:10px;">Analog Clock</h3>
+
+<div id="clock">
+    <div id="hour" class="hand"></div>
+    <div id="minute" class="hand"></div>
+    <div id="second" class="hand"></div>
+</div>
+
+<script>
+    for (let i = 0; i < 12; i++) {
+        let tick = document.createElement("div");
+        tick.className = "tick";
+        tick.style.transform = "rotate(" + (i * 30) + "deg)";
+        document.getElementById("clock").appendChild(tick);
+    }
+
+    function runClock() {
+        let now = new Date();
+        let hr = now.getHours();
+        let min = now.getMinutes();
+        let sec = now.getSeconds();
+
+        let hrPos = (hr % 12) * 30 + (min * 0.5);
+        let minPos = min * 6 + (sec * 0.1);
+        let secPos = sec * 6;
+
+        document.getElementById("hour").style.transform = "rotate(" + hrPos + "deg)";
+        document.getElementById("minute").style.transform = "rotate(" + minPos + "deg)";
+        document.getElementById("second").style.transform = "rotate(" + secPos + "deg)";
+    }
+
+    setInterval(runClock, 1000);
+    runClock();
+</script>
+
+</body>
+</html>

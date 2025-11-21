@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2> Days Until Christmas</h2>
+
+<button onclick="calc()">Check</button>
+<p id="ty"></p>
+
+<script>
+function calc() {
+    let today = new Date();
+    let xmas = new Date(today.getFullYear(), 11, 25);
+
+    if (today > xmas) xmas.setFullYear(xmas.getFullYear() + 1);
+
+    let diff = Math.ceil((xmas - today) / (1000*60*60*24));
+
+    document.getElementById("ty").innerHTML = diff + " days left";
+}
+</script>
+
+</body>
+</html>
